@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bariloche — ALFLYANGLER</title>
+<meta name="description" content="Fly fishing in Bariloche, Patagonia. Rainbow, Brown and Brook trout on the Limay, Manso, Traful and Caleufu rivers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0a0d0b;--dark:#111610;--dark2:#1a201a;
+  --green-deep:#1a3020;--green-mid:#2d5a3d;--green-light:#4a8c62;
+  --green-accent:#6dbf82;--gold:#c9a84c;--cream:#f2ede3;
+  --text-muted:#8a9e8d;--text-secondary:#b8c8bb;
+  --border:rgba(255,255,255,0.08);--border-light:rgba(255,255,255,0.15);
+  --region-color:#1a3a5c;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--cream);font-family:'Barlow',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,13,11,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:0.05em;color:var(--cream);text-decoration:none}
+.nav-logo span{color:var(--green-accent)}
+.nav-back{color:var(--text-secondary);text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s;display:flex;align-items:center;gap:0.5rem}
+.nav-back:hover{color:var(--cream)}
+
+/* HERO */
+.hero{position:relative;height:60vh;min-height:420px;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:3rem}
+.hero-bg{position:absolute;inset:0;background:var(--region-color);background-image:linear-gradient(135deg,#1a3a5c 0%,#0d2038 60%,#071520 100%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,13,11,0.9) 0%,rgba(10,13,11,0.2) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 3rem;width:100%}
+.hero-breadcrumb{font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--green-accent);margin-bottom:1rem;font-weight:500}
+.hero-breadcrumb a{color:var(--text-muted);text-decoration:none}
+.hero-breadcrumb a:hover{color:var(--green-accent)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,5rem);line-height:1;font-weight:400;color:var(--cream);margin-bottom:0.5rem}
+.hero-sub{font-size:1rem;color:var(--text-secondary)}
+
+/* MAIN LAYOUT */
+.page-inner{max-width:1100px;margin:0 auto;padding:5rem 3rem}
+.two-col{display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
+
+/* INFO PANEL */
+.info-panel{position:sticky;top:6rem}
+.info-title{font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--green-accent);margin-bottom:1.2rem;font-weight:500}
+.info-list{list-style:none;display:flex;flex-direction:column;gap:0.7rem;margin-bottom:2.5rem}
+.info-list li{display:flex;gap:0.75rem;align-items:flex-start;font-size:0.9rem;color:var(--text-secondary);line-height:1.5}
+.info-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green-accent);flex-shrink:0;margin-top:0.6rem}
+.map-wrap{border:1px solid var(--border);overflow:hidden;margin-bottom:2rem}
+.map-wrap iframe{display:block;width:100%;height:240px;border:none;filter:grayscale(30%) contrast(90%)}
+.map-label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);padding:0.6rem 0.8rem;background:var(--dark2);border-top:1px solid var(--border)}
+
+/* GUIDES */
+.guides-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;color:var(--cream);margin-bottom:0.5rem}
+.guides-sub{color:var(--text-secondary);font-size:0.95rem;margin-bottom:2.5rem}
+.guides-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem}
+.guide-card{background:var(--dark2);border:1px solid var(--border);padding:1.5rem;transition:border-color 0.2s}
+.guide-card:hover{border-color:rgba(109,191,130,0.3)}
+.guide-photo{width:100%;aspect-ratio:1;background:var(--dark);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.guide-photo img{width:100%;height:100%;object-fit:cover}
+.guide-photo-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;color:var(--text-muted);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;width:100%;height:100%}
+.guide-photo-placeholder svg{width:32px;height:32px;opacity:0.3}
+.guide-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--cream);margin-bottom:0.3rem}
+.guide-tag{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-accent);margin-bottom:1rem;display:block}
+.btn-contact{display:block;text-align:center;background:transparent;border:1px solid var(--border-light);color:var(--cream);padding:0.6rem 1rem;text-decoration:none;font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;font-family:'Barlow',sans-serif;transition:all 0.2s;cursor:pointer;width:100%}
+.btn-contact:hover{border-color:var(--green-accent);color:var(--green-accent)}
+
+/* CTA */
+.cta-block{background:var(--green-deep);border:1px solid rgba(109,191,130,0.2);padding:2.5rem;text-align:center}
+.cta-block h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--cream);margin-bottom:0.5rem}
+.cta-block p{color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem}
+.btn-primary{background:var(--green-accent);color:var(--black);padding:0.9rem 2.2rem;text-decoration:none;font-size:0.85rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.2s;font-family:'Barlow',sans-serif;border:none;cursor:pointer;display:inline-block}
+.btn-primary:hover{background:var(--green-light);transform:translateY(-1px)}
+
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1rem;color:var(--cream)}
+.footer-logo span{color:var(--green-accent)}
+.footer-copy{font-size:0.75rem;color:var(--text-muted)}
+
+/* MOBILE */
+@media(max-width:900px){
+  .two-col{grid-template-columns:1fr;gap:3rem}
+  .info-panel{position:static}
+  .guides-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  nav{padding:1rem 1.5rem}
+  .hero-content{padding:0 1.5rem}
+  .page-inner{padding:3rem 1.5rem}
+  .guides-grid{grid-template-columns:1fr}
+  footer{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">ALFLY<span>ANGLER</span></a>
+  <a href="index.html#regions" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5"/></svg>
+    All Destinations
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#regions">Destinations</a> &nbsp;/&nbsp; Bariloche</p>
+    <h1>Bariloche</h1>
+    <p class="hero-sub">Río Negro · Nahuel Huapi National Park · Patagonia</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="page-inner">
+  <div class="two-col">
+
+    <!-- LEFT: INFO -->
+    <div class="info-panel">
+      <p class="info-title">Season & Info</p>
+      <ul class="info-list">
+        <li>The season runs from November 1 to April 30</li>
+        <li>You can fish Rainbow, Brown and Brook trout</li>
+        <li>Key rivers: Limay, Manso, Traful and Caleufu</li>
+        <li>Key lakes: Nahuel Huapi, Mascardi, Fonck, Hess and Roca</li>
+        <li>Best dry fly fishing: January &amp; February</li>
+        <li>Best for trophy Brown trout: March to May</li>
+        <li>All fishing is catch &amp; release</li>
+      </ul>
+
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=Bariloche,+Rio+Negro,+Argentina&output=embed&z=8"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+        <div class="map-label">San Carlos de Bariloche · Río Negro</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: GUIDES -->
+    <div>
+      <h2 class="guides-title">Guides & Lodges</h2>
+      <p class="guides-sub">Our verified professionals in the Bariloche region.</p>
+
+      <div class="guides-grid">
+
+        <div class="guide-card">
+          <div class="guide-photo">
+            <div class="guide-photo-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              <span>Photo coming soon</span>
+            </div>
+          </div>
+          <p class="guide-name">Bariloche Fishing Trips</p>
+          <span class="guide-tag">Guide Service</span>
+          <a href="mailto:alflyangler@gmail.com?subject=Inquiry: Bariloche Fishing Trips" class="btn-contact">Book via ALFLYANGLER</a>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-photo">
+            <div class="guide-photo-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              <span>Photo coming soon</span>
+            </div>
+          </div>
+          <p class="guide-name">Matias Curuchet</p>
+          <span class="guide-tag">Fly Fishing Guide</span>
+          <a href="mailto:alflyangler@gmail.com?subject=Inquiry: Matias Curuchet - Bariloche" class="btn-contact">Book via ALFLYANGLER</a>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-photo">
+            <div class="guide-photo-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              <span>Photo coming soon</span>
+            </div>
+          </div>
+          <p class="guide-name">Nahuel Prichodko</p>
+          <span class="guide-tag">Fly Fishing Guide</span>
+          <a href="mailto:alflyangler@gmail.com?subject=Inquiry: Nahuel Prichodko - Bariloche" class="btn-contact">Book via ALFLYANGLER</a>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-photo">
+            <div class="guide-photo-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              <span>Photo coming soon</span>
+            </div>
+          </div>
+          <p class="guide-name">Ezequiel Speranza</p>
+          <span class="guide-tag">Fly Fishing Guide</span>
+          <a href="mailto:alflyangler@gmail.com?subject=Inquiry: Ezequiel Speranza - Bariloche" class="btn-contact">Book via ALFLYANGLER</a>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-block">
+        <h3>Ready to fish Bariloche?</h3>
+        <p>Tell us your dates and experience level and we'll connect you with the right guide.</p>
+        <a href="index.html#contact" class="btn-primary">Plan Your Trip</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">ALFLY<span>ANGLER</span></div>
+  <p class="footer-copy">© 2026 ALFLYANGLER. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
