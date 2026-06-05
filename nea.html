@@ -59,6 +59,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:
 .cta-block p{color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem}
 .btn-primary{background:var(--green-accent);color:var(--black);padding:0.9rem 2.2rem;text-decoration:none;font-size:0.85rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:all 0.2s;font-family:'Barlow',sans-serif;border:none;cursor:pointer;display:inline-block}
 .btn-primary:hover{background:var(--green-light);transform:translateY(-1px)}
+
+.season-wrap{margin:2.5rem 0}
+.sw-title{font-size:13px;font-weight:500;color:var(--cream);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px}
+.season-wrap .months-row{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}
+.season-wrap .month{border-radius:4px;height:36px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}
+.season-wrap .off{background:rgba(255,255,255,0.06);color:rgba(242,237,227,0.3)}
+.season-wrap .peak{background:#6dbf82;color:#0a2a0a}
+.season-wrap .good{background:#3a6b3a;color:#c8ebc8}
+.season-wrap .brackets-top{position:relative;height:58px}
+.season-wrap .leg{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
+.season-wrap .leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text-muted)}
+.season-wrap .leg-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+
 footer{background:var(--black);border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .footer-logo{font-family:'Playfair Display',serif;font-size:1rem;color:var(--cream)}
 .footer-logo span{color:var(--green-accent)}
@@ -101,7 +114,17 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:2rem 3
       </ul>
       <div class="map-wrap">
         <iframe src="https://maps.google.com/maps?q=Corrientes,+Argentina&output=embed&z=7" allowfullscreen loading="lazy"></iframe>
-        <div class="map-label">Corrientes · NEA · Argentina</div>
+        <div class="season-wrap">
+<p class="sw-title">NEA — Season & Fly Selection</p>
+<div class="brackets-top" id="bt-nea"></div>
+<div class="months-row" id="mr-nea"><div class="month good">Jan</div><div class="month good">Feb</div><div class="month peak">Mar</div><div class="month peak">Apr</div><div class="month good">May</div><div class="month off">Jun</div><div class="month off">Jul</div><div class="month off">Aug</div><div class="month good">Sep</div><div class="month peak">Oct</div><div class="month peak">Nov</div><div class="month good">Dec</div></div>
+<div class="leg">
+  <div class="leg-item"><div class="leg-dot" style="background:#6dbf82"></div>Peak fishing</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#3a6b3a"></div>Good fishing</div>
+  <div class="leg-item"><div class="leg-dot" style="background:rgba(255,255,255,0.06)"></div>Off season</div>
+</div></div>
+<script>(function(){var fg=[{"start": 0, "end": 1, "label": "Streamers"}, {"start": 2, "end": 4, "label": "Poppers"}, {"start": 8, "end": 8, "label": "Streamers"}, {"start": 9, "end": 11, "label": "Poppers"}];function draw(){var c=document.getElementById('bt-nea');c.innerHTML='';var r=document.getElementById('mr-nea');var cells=Array.from(r.querySelectorAll('.month'));var cr=c.getBoundingClientRect();var W=c.offsetWidth;var H=58;var ns='http://www.w3.org/2000/svg';var svg=document.createElementNS(ns,'svg');svg.style.width='100%';svg.style.height=H+'px';svg.setAttribute('viewBox','0 0 '+W+' '+H);fg.forEach(function(g){var s=cells[g.start].getBoundingClientRect();var e=cells[g.end].getBoundingClientRect();var x1=s.left-cr.left+3;var x2=e.right-cr.left-3;var mid=(x1+x2)/2;var yB=H-4,yK=H-22;var p=document.createElementNS(ns,'path');p.setAttribute('d',g.start===g.end?'M'+mid+' '+yB+' L'+mid+' '+yK:'M'+x1+' '+yB+' L'+x1+' '+yK+' L'+x2+' '+yK+' L'+x2+' '+yB);p.setAttribute('stroke','#fff');p.setAttribute('stroke-width','1.5');p.setAttribute('fill','none');svg.appendChild(p);var t=document.createElementNS(ns,'line');t.setAttribute('x1',mid);t.setAttribute('y1',yK);t.setAttribute('x2',mid);t.setAttribute('y2',yK-6);t.setAttribute('stroke','#fff');t.setAttribute('stroke-width','1.5');svg.appendChild(t);var tx=document.createElementNS(ns,'text');tx.setAttribute('x',mid);tx.setAttribute('y',yK-10);tx.setAttribute('text-anchor','middle');tx.setAttribute('font-size','10');tx.setAttribute('fill','#fff');tx.setAttribute('font-family','sans-serif');tx.setAttribute('font-weight','500');tx.textContent=g.label;svg.appendChild(tx);});c.appendChild(svg);}if(document.readyState==='complete')draw();else window.addEventListener('load',draw);})();</script>
+<div class="map-label">Corrientes · NEA · Argentina</div>
       </div>
     </div>
 
