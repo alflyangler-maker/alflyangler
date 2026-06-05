@@ -103,7 +103,17 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:2rem 3
 <div class="page-inner">
   <div class="two-col">
     <div class="info-panel">
-      <p class="info-title">Season & Info</p>
+      <div class="season-wrap">
+<p class="sw-title">Neuquén — Season & Fly Selection</p>
+<div class="brackets-top" id="bt-neuquen"></div>
+<div class="months-row" id="mr-neuquen"><div class="month peak">Jan</div><div class="month peak">Feb</div><div class="month peak">Mar</div><div class="month good">Apr</div><div class="month good">May</div><div class="month off">Jun</div><div class="month off">Jul</div><div class="month off">Aug</div><div class="month off">Sep</div><div class="month off">Oct</div><div class="month good">Nov</div><div class="month peak">Dec</div></div>
+<div class="leg">
+  <div class="leg-item"><div class="leg-dot" style="background:#6dbf82"></div>Peak fishing</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#3a6b3a"></div>Good fishing</div>
+  <div class="leg-item"><div class="leg-dot" style="background:rgba(255,255,255,0.06)"></div>Off season</div>
+</div></div>
+<script>(function(){var fg=[{"start": 0, "end": 1, "label": "Dry fly"}, {"start": 2, "end": 3, "label": "Streamers"}, {"start": 4, "end": 4, "label": "Nymphs"}, {"start": 10, "end": 10, "label": "Nymphs"}, {"start": 11, "end": 11, "label": "Dry fly"}];function draw(){var c=document.getElementById('bt-neuquen');c.innerHTML='';var r=document.getElementById('mr-neuquen');var cells=Array.from(r.querySelectorAll('.month'));var cr=c.getBoundingClientRect();var W=c.offsetWidth;var H=58;var ns='http://www.w3.org/2000/svg';var svg=document.createElementNS(ns,'svg');svg.style.width='100%';svg.style.height=H+'px';svg.setAttribute('viewBox','0 0 '+W+' '+H);fg.forEach(function(g){var s=cells[g.start].getBoundingClientRect();var e=cells[g.end].getBoundingClientRect();var x1=s.left-cr.left+3;var x2=e.right-cr.left-3;var mid=(x1+x2)/2;var yB=H-4,yK=H-22;var p=document.createElementNS(ns,'path');p.setAttribute('d',g.start===g.end?'M'+mid+' '+yB+' L'+mid+' '+yK:'M'+x1+' '+yB+' L'+x1+' '+yK+' L'+x2+' '+yK+' L'+x2+' '+yB);p.setAttribute('stroke','#fff');p.setAttribute('stroke-width','1.5');p.setAttribute('fill','none');svg.appendChild(p);var t=document.createElementNS(ns,'line');t.setAttribute('x1',mid);t.setAttribute('y1',yK);t.setAttribute('x2',mid);t.setAttribute('y2',yK-6);t.setAttribute('stroke','#fff');t.setAttribute('stroke-width','1.5');svg.appendChild(t);var tx=document.createElementNS(ns,'text');tx.setAttribute('x',mid);tx.setAttribute('y',yK-10);tx.setAttribute('text-anchor','middle');tx.setAttribute('font-size','10');tx.setAttribute('fill','#fff');tx.setAttribute('font-family','sans-serif');tx.setAttribute('font-weight','500');tx.textContent=g.label;svg.appendChild(tx);});c.appendChild(svg);}if(document.readyState==='complete')draw();else window.addEventListener('load',draw);})();</script>
+<p class="info-title">Season & Info</p>
       <ul class="info-list">
         <li>The season runs from November 1 to April 30</li>
         <li>You can fish Rainbow and Brown trout</li>
@@ -115,16 +125,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:2rem 3
       </ul>
       <div class="map-wrap">
         <iframe src="https://maps.google.com/maps?q=Neuquen,+Argentina&output=embed&z=7" allowfullscreen loading="lazy"></iframe>
-        <div class="season-wrap">
-<p class="sw-title">Neuquén — Season & Fly Selection</p>
-<div class="brackets-top" id="bt-neuquen"></div>
-<div class="months-row" id="mr-neuquen"><div class="month peak">Jan</div><div class="month peak">Feb</div><div class="month peak">Mar</div><div class="month good">Apr</div><div class="month good">May</div><div class="month off">Jun</div><div class="month off">Jul</div><div class="month off">Aug</div><div class="month off">Sep</div><div class="month off">Oct</div><div class="month good">Nov</div><div class="month peak">Dec</div></div>
-<div class="leg">
-  <div class="leg-item"><div class="leg-dot" style="background:#6dbf82"></div>Peak fishing</div>
-  <div class="leg-item"><div class="leg-dot" style="background:#3a6b3a"></div>Good fishing</div>
-  <div class="leg-item"><div class="leg-dot" style="background:rgba(255,255,255,0.06)"></div>Off season</div>
-</div></div>
-<script>(function(){var fg=[{"start": 0, "end": 1, "label": "Dry fly"}, {"start": 2, "end": 3, "label": "Streamers"}, {"start": 4, "end": 4, "label": "Nymphs"}, {"start": 10, "end": 10, "label": "Nymphs"}, {"start": 11, "end": 11, "label": "Dry fly"}];function draw(){var c=document.getElementById('bt-neuquen');c.innerHTML='';var r=document.getElementById('mr-neuquen');var cells=Array.from(r.querySelectorAll('.month'));var cr=c.getBoundingClientRect();var W=c.offsetWidth;var H=58;var ns='http://www.w3.org/2000/svg';var svg=document.createElementNS(ns,'svg');svg.style.width='100%';svg.style.height=H+'px';svg.setAttribute('viewBox','0 0 '+W+' '+H);fg.forEach(function(g){var s=cells[g.start].getBoundingClientRect();var e=cells[g.end].getBoundingClientRect();var x1=s.left-cr.left+3;var x2=e.right-cr.left-3;var mid=(x1+x2)/2;var yB=H-4,yK=H-22;var p=document.createElementNS(ns,'path');p.setAttribute('d',g.start===g.end?'M'+mid+' '+yB+' L'+mid+' '+yK:'M'+x1+' '+yB+' L'+x1+' '+yK+' L'+x2+' '+yK+' L'+x2+' '+yB);p.setAttribute('stroke','#fff');p.setAttribute('stroke-width','1.5');p.setAttribute('fill','none');svg.appendChild(p);var t=document.createElementNS(ns,'line');t.setAttribute('x1',mid);t.setAttribute('y1',yK);t.setAttribute('x2',mid);t.setAttribute('y2',yK-6);t.setAttribute('stroke','#fff');t.setAttribute('stroke-width','1.5');svg.appendChild(t);var tx=document.createElementNS(ns,'text');tx.setAttribute('x',mid);tx.setAttribute('y',yK-10);tx.setAttribute('text-anchor','middle');tx.setAttribute('font-size','10');tx.setAttribute('fill','#fff');tx.setAttribute('font-family','sans-serif');tx.setAttribute('font-weight','500');tx.textContent=g.label;svg.appendChild(tx);});c.appendChild(svg);}if(document.readyState==='complete')draw();else window.addEventListener('load',draw);})();</script>
+        
 <div class="map-label">Neuquén · Northern Patagonia</div>
       </div>
     </div>
